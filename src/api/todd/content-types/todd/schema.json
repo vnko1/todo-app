@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "todds",
+  "info": {
+    "singularName": "todd",
+    "pluralName": "todds",
+    "displayName": "Todd"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

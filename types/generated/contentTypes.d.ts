@@ -362,29 +362,24 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiTodoTodo extends Schema.CollectionType {
-  collectionName: 'todos';
+export interface ApiToddTodd extends Schema.CollectionType {
+  collectionName: 'todds';
   info: {
-    singularName: 'todo';
-    pluralName: 'todos';
-    displayName: 'todo';
-    description: '';
+    singularName: 'todd';
+    pluralName: 'todds';
+    displayName: 'Todd';
   };
   options: {
     draftAndPublish: false;
   };
   attributes: {
     title: Attribute.String & Attribute.Required;
-    comment: Attribute.Text;
-    due: Attribute.Date;
-    priority: Attribute.Enumeration<['minor', 'regular', 'critical']> &
-      Attribute.DefaultTo<'regular'>;
-    done: Attribute.Boolean & Attribute.DefaultTo<false>;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::todo.todo', 'oneToOne', 'admin::user'> &
+    createdBy: Attribute.Relation<'api::todd.todd', 'oneToOne', 'admin::user'> &
       Attribute.Private;
-    updatedBy: Attribute.Relation<'api::todo.todo', 'oneToOne', 'admin::user'> &
+    updatedBy: Attribute.Relation<'api::todd.todd', 'oneToOne', 'admin::user'> &
       Attribute.Private;
   };
 }
@@ -825,7 +820,7 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::todo.todo': ApiTodoTodo;
+      'api::todd.todd': ApiToddTodd;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
